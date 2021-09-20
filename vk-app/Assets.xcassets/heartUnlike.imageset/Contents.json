@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "234-2347520_toicon-icon-lines-and-angles-like-heart-icon.png.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
