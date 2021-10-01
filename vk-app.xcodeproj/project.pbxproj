@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E0F23BB26F9E96900BDEA87 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F23BA26F9E96900BDEA87 /* NewsViewController.swift */; };
+		9E18AABA2705E98400224D90 /* VKAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E18AAB92705E98400224D90 /* VKAuthViewController.swift */; };
 		9E55663B262359E700EEAA81 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E55663A262359E700EEAA81 /* User.swift */; };
 		9E55664026235A4E00EEAA81 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E55663F26235A4E00EEAA81 /* Group.swift */; };
 		9E55664326235AFC00EEAA81 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E55664226235AFC00EEAA81 /* DataStorage.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		9E0F23BA26F9E96900BDEA87 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		9E18AAB92705E98400224D90 /* VKAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAuthViewController.swift; sourceTree = "<group>"; };
 		9E55663A262359E700EEAA81 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9E55663F26235A4E00EEAA81 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		9E55664226235AFC00EEAA81 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				9EB97F3F261CE8210066601E /* AppDelegate.swift */,
 				9EB97F41261CE8210066601E /* SceneDelegate.swift */,
 				9EB97F43261CE8210066601E /* ViewController.swift */,
+				9E18AAB92705E98400224D90 /* VKAuthViewController.swift */,
 				9EB97F45261CE8210066601E /* Main.storyboard */,
 				9EB97F48261CE8220066601E /* Assets.xcassets */,
 				9EB97F4A261CE8220066601E /* LaunchScreen.storyboard */,
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ED0A3AF26233CE1007E5496 /* FriendViewController.swift in Sources */,
+				9E18AABA2705E98400224D90 /* VKAuthViewController.swift in Sources */,
 				9EFB667326F993E9007E2541 /* NewsHeaderViewCell.swift in Sources */,
 				9ED0A3A42622F46D007E5496 /* UserTableViewCell.swift in Sources */,
 				9EB97F44261CE8210066601E /* ViewController.swift in Sources */,
