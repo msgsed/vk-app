@@ -7,6 +7,15 @@
 
 import UIKit
 
+struct NewsFeed {
+    var type = ""
+    //var text = ""
+    init(json: [String: Any]) {
+        self.type = json["type"] as! String
+        //self.text = json["text"] as! String
+    }
+}
+
 enum PostCellType: Int, CaseIterable {
     case author = 0
     case text
@@ -14,24 +23,19 @@ enum PostCellType: Int, CaseIterable {
     case likeCount
 }
 
-
-
 class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var myTableView: UITableView!
+    
+    var news = [NewsFeed]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         requestNewsFeed()
     }
     
-    func requestNewsFeed(){
-        //Здесь запрос новостной ленты
-        
-    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
-            return 10
+        return news.count
     }
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,9 +43,6 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        //cell.textLabel?.text = "Section: \(indexPath.section), row: \(indexPath.row)"
-        //return cell
 
         let postCellType = PostCellType(rawValue: indexPath.row)
         
@@ -73,6 +74,27 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
-  
-
+    func requestNewsFeed(){
+        guard let url = URL(string: "https://api.vk.com/method/newsfeed.get?access_token=\(Session.shared.token)&extended=1&v=5.131")
+        else {
+            return
+        }
+        let session = URLSession.shared
+        let task = session.dataTask(with: url) { (data, response, error) in
+            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
+            print(json)
+            
+            if let json = json {
+                let array = json as! [String: Any]
+                let responseArray = array["response"] as! [String: Any]
+                let itemsArray = responseArray["items"] as! [[String: Any]]
+                self.news = itemsArray.map{NewsFeed(json: $0)}
+                
+                print (self.news)
+     
+            }
+        }
+        
+        task.resume()
+    }
 }
