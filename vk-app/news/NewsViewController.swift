@@ -30,12 +30,13 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     var news = [NewsFeed]()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         requestNewsFeed()
+        super.viewDidLoad()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return news.count
+        //return news.count
+        return 10
     }
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
